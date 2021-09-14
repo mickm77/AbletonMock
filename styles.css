@@ -12,16 +12,24 @@
   --instagram-orange: #f77737;
 
   --spacer: 8.3vw;
+  --bp-desk: 800px;
 }
 
 body {
   font-family: "Spartan", sans-serif;
   font-size: 16px;
+  background-color: #ddd;
 }
 
 a {
   color: var(--button);
   text-decoration: none;
+}
+
+header {
+  max-width: 1600px;
+  background-color: white;
+  margin: 0 auto;
 }
 
 header svg {
@@ -30,9 +38,37 @@ header svg {
   margin: 20px 0 0 20px;
 }
 
-.menu {
+.menuMobile {
   font-weight: 600;
   font-size: 1rem;
+}
+.menu {
+  display: none;
+}
+
+.menu ul {
+  display: flex;
+}
+.menu ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu ul li:hover {
+  color: var(--title-read);
+}
+
+.menu ul li + li {
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 800px) {
+  .menuMobile {
+    display: none;
+  }
+  .menu {
+    display: inline-block;
+  }
 }
 
 svg + .menu {
@@ -62,6 +98,14 @@ nav a:first-child {
 
 main {
   margin: 0 var(--spacer);
+  max-width: 1600px;
+  background-color: white;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    margin: 0 auto;
+  }
 }
 
 main section + section {
@@ -76,6 +120,14 @@ main section + section {
   min-height: calc(100vh - 120px);
   object-fit: cover;
 }
+
+@media screen and (min-width: 800px) {
+  .hero img {
+    width: 1334px;
+    margin: 0 auto;
+  }
+}
+
 .title {
   color: var(--title-read);
   position: absolute;
@@ -83,6 +135,11 @@ main section + section {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
+}
+@media screen and (min-width: 800px) {
+  .title {
+    font-size: 7rem;
+  }
 }
 
 p {
@@ -111,8 +168,14 @@ img + p {
   min-height: 218px;
 }
 
+@media screen and (min-width: 800px) {
+  .collage {
+    width: 1600px;
+  }
+}
+
 .collage + * {
-  margin-top: 8vw;
+  margin-top: var(--spacer);
 }
 
 .collage-2 div {
