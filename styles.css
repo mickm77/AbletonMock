@@ -10,6 +10,8 @@
   --twitter-blue: #1da1f2;
   --youtube-red: #ff001d;
   --instagram-orange: #f77737;
+
+  --spacer: 8.3vw;
 }
 
 body {
@@ -22,13 +24,10 @@ a {
   text-decoration: none;
 }
 
-header {
-}
-
 header svg {
   height: 28px;
   width: 60px;
-  margin-top: 20px;
+  margin: 20px 0 0 20px;
 }
 
 .menu {
@@ -43,24 +42,35 @@ svg + .menu {
 .divider {
   margin-top: 20px;
   height: 2px;
+  width: 100%;
   background-color: #fefefe;
+  border-bottom: 2px solid #ddd;
 }
 
 nav {
   padding: 20px;
   font-size: 0.75rem;
+  display: flex;
+  gap: 12px;
 }
+nav a {
+  color: #333;
+}
+nav a:first-child {
+  color: var(--title-read);
+}
+
 main {
-  margin: 0 8.3vw;
+  margin: 0 var(--spacer);
 }
 
 main section + section {
-  margin-top: 8.3vw;
+  margin-top: var(--spacer);
 }
 
 .hero {
   position: relative;
-  margin-bottom: 8.3vw;
+  margin-bottom: var(--spacer);
 }
 .hero img {
   min-height: calc(100vh - 120px);
@@ -92,6 +102,10 @@ p + p {
   margin-top: 0;
 }
 
+img + p {
+  margin-top: var(--spacer);
+}
+
 .collage {
   position: relative;
   min-height: 218px;
@@ -103,18 +117,18 @@ p + p {
 
 .collage-2 div {
   background-color: var(--collage-green);
-  margin-left: -8.3vw;
-  padding: 8.3vw 16vw 8.3vw 8.3vw;
+  margin-left: -var(--spacer);
+  padding: var(--spacer) 16vw var(--spacer) var(--spacer);
   width: 58vw;
 }
 
 .collage-2 img + img {
-  margin-top: 8.3vw;
+  margin-top: var(--spacer);
 }
 
 .collage-3 {
   background-color: var(--collage-lilac);
-  margin: 0 8.3vw;
+  margin: 0 var(--spacer);
 }
 
 .photo1 {
@@ -129,7 +143,7 @@ p + p {
   position: absolute;
   right: 0;
   padding: 64px 32px 64px 64px;
-  margin-right: -8.3vw;
+  margin-right: -var(--spacer);
   height: 218px;
   background-color: var(--collage-yellow);
 }
@@ -143,7 +157,7 @@ p + p {
 
 .photo6 {
   position: absolute;
-  left: -8.3vw;
+  left: -var(--spacer);
   width: 50%;
   top: 50%;
   transform: translate(0, -50%);
@@ -175,7 +189,7 @@ p + p {
 }
 
 .jobs {
-  padding: 8.3vw;
+  padding: var(--spacer);
   background-color: var(--collage-blue);
 }
 
@@ -189,8 +203,8 @@ p + p {
 }
 
 footer {
-  margin-top: 8.3vw;
-  padding: 8.3vw;
+  margin-top: var(--spacer);
+  padding: var(--spacer);
   border-top: 2px solid #eee;
   font-size: 0.75rem;
 }
@@ -224,8 +238,32 @@ form button {
   margin: 0;
 }
 
+.newsLetter strong {
+  display: block;
+}
+
+.links {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: calc(var(--spacer) * 1.5) 0;
+}
+
+.links a {
+  color: #333;
+}
+
+.links a:after {
+  content: ">";
+  margin-left: 8px;
+}
+
+.links a + h3 {
+  margin-top: var(--spacer);
+}
+
 .social {
   display: flex;
+  gap: 8px;
 }
 
 .social a {
@@ -241,7 +279,7 @@ form button {
   background-color: var(--twitter-blue);
 }
 
-.social .youtube {
+.social .youtubeSoc {
   background-color: var(--youtube-red);
 }
 
